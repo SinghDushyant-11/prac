@@ -1,0 +1,213 @@
+mvn --version
+
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5 -DinteractiveMode=false
+
+cd my-app
+
+mvn package
+
+if error:
+my-app>pom>
+line 10
+<properties>
+<maven.compiler.source>7</maven.compiler.source>
+<maven.compiler.target>1.7</maven.compiler.target>
+</properties>
+
+git config --global user.email "singhdushyant557@gmail.com"
+
+git config --global user.name "SinghDushyant-11"
+
+git init
+
+git add pom.xml
+
+git add src
+
+ssh-keygen -t ed25519 -C "singhdushyant557@gmail.com"
+
+sudo cat /home/student/.ssh/id_ed25519.pub
+git>newrepostory"ext">add readme>setting> ssh gps keys> ssh key copy past
+add ssh key> 
+
+git commit -m 'Hello'
+
+git config --global push.autoSetupRemote true
+
+git branch -M origin main 
+
+git push origin main
+
+git pull --rebase origin main
+
+>>>git push origin main
+
+sudo systemctl status jenkins
+ #psw
+
+sudo systemctl start jenkins
+
+browser>
+localhost:8080
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+user:admin
+psw:copypast
+
+jenkinse>new item>p6>pipeline>
+
+script 
+
+pipeline
+{
+    agent any
+    stages
+    {
+        stage('Checkout')
+        {
+            steps
+            {
+                git branch:'main',url:'https://github.com/AnnaBinoy09/demo_devops.git';// change to your repository path
+            }
+        }
+        stage('Build')
+        {
+            steps
+            {
+                sh 'mvn clean package'
+            }
+        }
+        stage('Test')
+        {
+            steps
+            {
+                sh 'mvn test'
+            }
+        }
+        
+    }
+}
+
+>save>build
+
+p6>config if mistake
+
+
+
+
+
+
+
+
+
+sudo systemctl status jenkins
+ #psw
+
+sudo systemctl start jenkins
+
+browser>
+localhost:8080
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+user:admin
+psw:copypast
+
+mvn --version
+
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5 -DinteractiveMode=false
+
+cd my-app
+
+mvn package
+
+if error:
+my-app>pom>
+line 10
+<properties>
+<maven.compiler.source>7</maven.compiler.source>
+<maven.compiler.target>1.7</maven.compiler.target>
+</properties>
+
+git
+
+>>>git config --global user.email "singhdushyant557@gmail.com"
+
+>>>git config --global user.name "SinghDushyant-11"
+
+ls -/.ssh
+
+rm -/.ssh/id_ed25519
+
+rm -/.ssh/id_ed25519.pub
+
+ls -/.ssh
+
+>>>ssh-keygen -t ed25519 -C "singhdushyant557@gmail.com"
+
+enter 3 time
+
+#>>>sudo cat /home/student/.ssh/id_ed25519.pub
+
+git>newrepostory"ext">add readme>setting> ssh gps keys> ssh key copy past
+add ssh key> 
+
+>>>git init
+
+>>>git add pom.xml
+
+>>>git add src
+
+>>>git commit -m 'Hello'
+
+>>>git branch -M origin main 
+
+>>>git remote add origin git@github.com:SinghDushyant-11/ext
+
+>>>git config --global push.autoSetupRemote true
+
+>>>git push origin main
+#error
+
+>>>git pull --rebase origin main
+
+>>>git push origin main
+
+jenkinse>new item>p6>pipeline>
+
+script 
+
+pipeline
+{
+    agent any
+    stages
+    {
+        stage('Checkout')
+        {
+            steps
+            {
+                git branch:'main',url:'https://github.com/AnnaBinoy09/demo_devops.git';// change to your repository path
+            }
+        }
+        stage('Build')
+        {
+            steps
+            {
+                sh 'mvn clean package'
+            }
+        }
+        stage('Test')
+        {
+            steps
+            {
+                sh 'mvn test'
+            }
+        }
+        
+    }
+}
+
+>save>build
+
+p6>config if mistake
