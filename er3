@@ -1,0 +1,17 @@
+mkdir demo
+cd demo
+
+gradle init --type java-application
+
+gradle build 
+
+gradle run
+
+task:
+build.gradle>
+line 29
+task hello{
+doLast{println 'Welcome'}
+}
+
+gradle hello
