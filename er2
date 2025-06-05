@@ -1,0 +1,17 @@
+mvn --version
+
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5 -DinteractiveMode=false
+
+cd my-app
+
+mvn package
+
+if error:
+my-app>pom>
+line 10
+<properties>
+<maven.compiler.source>8</maven.compiler.source>
+<maven.compiler.target>8</maven.compiler.target>
+</properties>
+
+java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
