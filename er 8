@@ -1,0 +1,136 @@
+mvn archetype:generate –DgroupId=in.eg -DartifactId=maven4 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+cd maven4 
+
+mvn package 
+
+<properties> 
+  <maven.compiler.source>7</maven.compiler.source> 
+  <maven.compiler.target>1.7</maven.compiler.target> 
+</properties> 
+
+mvn package 
+
+ git
+
+ git config --global user.email “Your Github email” 
+
+ git config --global user.name “Your Github username”
+
+ git init 
+
+ git add pom.xml 
+
+ git add src 
+
+ ssh-keygen -t ed25519 -C “Your Github email” 
+
+ Enter x3
+
+ sudo cat /home/student/.ssh/id_ed25519.pub 
+
+icon in the top right corner --> Settings --> SSH and GPG keys --> New SSH Key. 
+
+git commit -m “Your commit message” 
+
+New -> enter a repository name, Give a description 
+(optional) and tick the checkbox “Add a Readme file” and click on the green 
+button “Create repository” 
+
+git remote add origin git@github.com:<Your Github username>/<Your repository name> 
+
+git config --global push.autoSetupRemote true 
+
+git branch -M main 
+
+git push origin main 
+
+git pull --rebase origin main 
+
+git push origin main 
+
+In case you executed Step #15 more than once, then execute the command 
+       git remote set-url origin git@github.com:<Your Github username>/<Your repository name> 
+       and execute the commands from Step# 42 to Step #50
+
+Create an empty jar file, for example t.jar in /home/student path by  
+        executing the command
+
+gedit t.jar 
+
+sudo systemctl status jenkins 
+
+Type localhost:8080 in the browser and enter 
+ 
+       Username : admin 
+       Password : The password which you get after typing the command 
+       sudo cat /var/lib/jenkins/secrets/initialAdminPassword 
+
+new item>name AnsiDeploy > pipeline >ok
+
+pipeline script:
+
+pipeline{
+    agent any
+    stages 
+    {
+        stage("Checkout")
+	{
+	    steps	
+	    {
+		git branch:'main',url:'https://github.com/AnnaBinoy09/demo_devops.git"
+	    }
+        }
+	stage("Build")
+	{
+	     steps
+	     {
+		sh 'mvn clean package'
+             }
+	}
+	stage("Test")
+        {
+             steps
+             {
+                sh 'mvn test'
+             }
+	}
+	stage("Archive Artifacts")
+	{
+	     steps
+             {
+                archiveArtifacts artifacts: '**/target/*.jar' ,  allowEmptyArchive: true
+             }
+	}
+	stage("Deploy")
+	{
+	     steps
+	     {
+		sh """
+   		   export ANSIBLE_HOST_KEY_CHECKING=False
+                   ansible-playbook -i hosts.ini deploy.yml --extra-vars "ansible_become_pass=exam@cse"
+		   """
+	     }
+     	}
+    }
+}
+
+click on Save 
+
+sudo gedit /var/lib/jenkins/workspace/<Your pipeline name>/mydeploy.yml 
+
+---
+- name: Deploy Artifact to localhost
+  hosts: localhost
+  tasks:
+   - name: Copy the artifact to target location
+     become: true
+     become_user: externals
+     become_method: su
+     copy:
+       src: "/var/lib/jenkins/workspace/HelloMaven/target/my-app-1.0-SNAPSHOT.jar"
+       dest: "/home/externals/P8/t.jar"
+       
+save and close the file 
+
+Click on Build now
