@@ -1,0 +1,10 @@
+last lab:
+
+azure login > search for devops organization > my azure devops organization
+> chose orgnization > project > pipeline > creat git hub > with pom file one>
+aprove > run > job > relese > new pipeline > add artifact > add stage
+> create relese > deploy > multiple > deploye > overview
+
+
+
+https://github.com/deeksheo/practice.git
