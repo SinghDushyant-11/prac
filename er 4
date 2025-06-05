@@ -1,0 +1,37 @@
+mvn --version
+
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5 -DinteractiveMode=false
+
+cd my-app
+
+mvn package
+
+if error:
+my-app>pom>
+line 10
+<properties>
+<maven.compiler.source>8</maven.compiler.source>
+<maven.compiler.target>8</maven.compiler.target>
+</properties>
+
+java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
+
+mvn package
+
+gradle init --type pom
+
+gradle build
+
+my-App>pom>build>
+remove maven line 2
+line 3
+apply plugin:'application'
+line 9 10
+both comapatibility to 1.8
+line 21
+mainClassName='com.mycompany.app'
+>>>myapp>main>java>com>mycompany>app.java
+
+gradle build
+
+gradle run
