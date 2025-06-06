@@ -32,6 +32,8 @@ add ssh key>
 
 git commit -m 'Hello'
 
+git remote add origin git@github.com:dushyant-11/ext
+
 git config --global push.autoSetupRemote true
 
 git branch -M origin main 
