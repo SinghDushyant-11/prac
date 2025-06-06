@@ -3,6 +3,8 @@ cd demo
 
 gradle init --type java-application
 
+subo update-alternatives --config java
+
 gradle build 
 
 gradle run
